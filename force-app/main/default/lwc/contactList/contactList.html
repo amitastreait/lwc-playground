@@ -1,0 +1,26 @@
+<!--
+  @File Name          : contactList.html
+  @Description        : 
+  @Author             : Amit Singh
+  @Group              : 
+  @Last Modified By   : Amit Singh
+  @Last Modified On   : 24/6/2020, 4:44:57 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    24/6/2020   Amit Singh     Initial Version
+-->
+<template>
+    <lightning-card>
+        <template if:true={errors}>
+            <p>{errors}</p>
+        </template>
+        <template if:true={contacts.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={contacts.data}
+                columns={columns}
+            >
+           </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

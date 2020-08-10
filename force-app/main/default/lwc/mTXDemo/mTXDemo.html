@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Account List" icon-name="standard:account">
+        <div class="slds-m-around_small">
+            <lightning-accordion allow-multiple-sections-open 
+                active-section-name="AccountList"  >
+                <lightning-accordion-section name="AccountList" label="Account List">
+                    <template if:true={accounts}>
+                        <template for:each={accounts} for:item="acc">
+                            <lightning-input type="checkbox" 
+                                variant="standard" key={acc.Id} 
+                                data-record-id={acc.Id}
+                                onchange={handleCheckboxChange}
+                                label="Select Checkbox" 
+                                ></lightning-input>  &nbsp;
+                                {acc.Name}
+                        </template>
+                    </template>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="contactList" label="Contact List">
+                    <template if:true={contacts}>
+                        <template for:each={contacts} for:item="con">
+                            {con.Name}
+                        </template>
+                    </template>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+</template>

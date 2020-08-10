@@ -1,0 +1,64 @@
+<!--
+  @File Name          : accountDetails.html
+  @Description        : 
+  @Author             : Amit Singh
+  @Group              : 
+  @Last Modified By   : Amit Singh
+  @Last Modified On   : 21/6/2020, 9:50:08 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    21/6/2020   Amit Singh     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Account Detail" icon-name="standard:account">
+        <p slot="actions">
+            <lightning-button class="button" variant="brand" label="Generate Report" title="Generate Report" 
+            onclick={handleGenerateReport}></lightning-button>
+        </p>
+        <p class="slds-p-around_small">
+            <template for:each={result} for:item="account">
+                <div key={account.Id}>
+                    <p >Name     : {account.Name}</p>
+                    <p >Industry : {account.Industry}</p>
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>{account.Name}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                Industry
+                            </td>
+                            <td>{account.Industry}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2">Rating and Account Number</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Rating
+                            </td>
+                            <td>{account.Rating}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Account Number</td>
+                            <td>
+                                {account.AccountNumber}
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </template>
+        </p>
+    </lightning-card>
+</template>

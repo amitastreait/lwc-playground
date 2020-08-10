@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : Amit Singh
+  @group             : 
+  @last modified on  : 07-24-2020
+  @last modified by  : Amit Singh
+  Modifications Log 
+  Ver   Date         Author       Modification
+  1.0   07-24-2020   Amit Singh   Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="custom:custom23">
+        <div class="slds-m-around_small">
+            <c-child-get item-name={itemName}></c-child-get>
+        </div>
+        <div class="slds-m-around_small">
+            Indise Parent Component : {itemName}
+        </div>
+    </lightning-card>
+</template>

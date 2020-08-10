@@ -1,0 +1,76 @@
+<!--
+  @description       : 
+  @author            : Amit Singh
+  @group             : 
+  @last modified on  : 07-17-2020
+  @last modified by  : Amit Singh
+  Modifications Log 
+  Ver   Date         Author       Modification
+  1.0   07-15-2020   Amit Singh   Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  
+        title="Detect Text in Image" icon-name="utility:einstein">
+        <template if:true={isLoading}>
+            <lightning-spinner variant="brand" alternative-text="Loading" size="small">
+            </lightning-spinner>
+        </template>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="4" padding="around-small">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input accept="image/png,image/jpg,image/jpeg" type="file"
+                    onchange={handleFilesChange} 
+                    label={fileLabel}></lightning-input>
+                    &nbsp; {fileName} &nbsp;
+                    <lightning-input onchange={handleChange} type="checkbox" variant="standard" 
+                        name="Is Business Card?" label="Is Business Card?">
+                    </lightning-input>
+                    <lightning-combobox
+                        name="Create Record?"
+                        label="Create Record?"
+                        value={value}
+                        placeholder="Create Record?"
+                        options={options}
+                        onchange={handleChangePick} >
+                    </lightning-combobox>
+                </div>
+                <div>
+                    <lightning-button 
+                    label="Predict" title="Predict" onclick={startPrediction}>
+                </lightning-button>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="8" padding="around-small">
+                <lightning-accordion allow-multiple-sections-open active-section-name="A" >
+                    <lightning-accordion-section name="Response_From_Einstein_API" 
+                        label="Response From Einstein API">
+                        <div class="slds-scrollable" style="height: 800px; width: 580px;">
+                            <textarea
+                                    style="width: 700px; height: 800px;"
+                                    class="resultCardClass"
+                                    rows="7"
+                                    disabled
+                                >
+                            </textarea>
+                        </div>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="sObject_Record_Created_in_Salesforce"
+                        label="sObject Record Created in Salesforce">
+                        <textarea
+                            style="width: 700px; height: 800px;"
+                            class="recordDetailsClass"
+                            rows="7"
+                            disabled>
+                        </textarea>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+                <template if:true={errors}>
+                    <div class="slds-scrollable" style="height:5rem;width:24rem">
+                        <lightning-formatted-rich-text title="Error from API" value={errors}  >
+                        </lightning-formatted-rich-text>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

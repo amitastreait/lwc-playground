@@ -1,0 +1,12 @@
+<template>
+
+    <c-child-component onselected={handleEvent} >
+    </c-child-component>
+    <div class="slds-m-around_large">
+        <lightning-button label="Click Me" value="Click Me" onclick={handleClick}>
+        </lightning-button>
+    </div>
+    <div class="slds-m-around_large">
+        {childmessage}
+    </div>
+</template>

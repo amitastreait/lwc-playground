@@ -1,0 +1,23 @@
+<!--
+  @File Name          : unitTest.html
+  @Description        : 
+  @Author             : Amit Singh
+  @Group              : 
+  @Last Modified By   : Amit Singh
+  @Last Modified On   : 24/6/2020, 5:19:20 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    24/6/2020   Amit Singh     Initial Version
+-->
+<template>
+    <lightning-card title="Unit Status" icon-name="standard:bot">
+        <lightning-input
+        label="Unit Number"
+        value={unitNumber}
+        onchange={handleChange} >
+      </lightning-input>
+      <div class="slds-m-around_medium">
+        Unit {unitNumber} alive!
+      </div>
+    </lightning-card>
+  </template>

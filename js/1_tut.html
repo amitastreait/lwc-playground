@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById('btn').addEventListener('click', function(event){
+                event.stopPropagation();
+                
+                console.log('button clicked');
+            }, true);
+            console.log('clientWidth ', document.getElementById('btn').clientWidth);
+            console.log('cloneNode ', document.getElementById('btn').cloneNode);
+            console.log('getBoundingClientRect ', document.getElementById('btn').getBoundingClientRect);
+            console.log('getClientRects ', document.getElementById('btn').getClientRects);
+        }
+    </script>
+</head>
+<body>
+    <h1>Day 1 JavaScript</h1>
+    <div  onclick="console.log('div clicked')">
+        <button id="btn">Click Me</button>
+    </div>
+</body>
+</html>
