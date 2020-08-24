@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : Amit Singh
+  @group             : 
+  @last modified on  : 08-24-2020
+  @last modified by  : Amit Singh
+  Modifications Log 
+  Ver   Date         Author       Modification
+  1.0   08-23-2020   Amit Singh   Initial Version
+-->
+<template>
+  <div>
+    <lightning-card
+      variant="Narrow"
+      title="Speech To Text"
+      icon-name="custom:custom45"
+    >
+      <div class="slds-var-m-around_large">
+        <audio controls></audio>
+        <lightning-button variant="natural" label="Record" onclick={handleClick}>
+        </lightning-button>
+      </div>
+    </lightning-card>
+  </div>
+</template>

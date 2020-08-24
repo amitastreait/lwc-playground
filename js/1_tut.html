@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript</title>
     <script>
+        
         window.onload = function(){
             document.getElementById('btn').addEventListener('click', function(event){
-                event.stopPropagation();
-                
+                //debugger;
+                //event.stopPropagation();
+                let elem = document.getElementById('btn');
+                console.log('nodeName ', elem.nodeName);
+                console.log('tagName ', elem.tagName);
+                console.log('clientWidth ', elem.clientWidth);
+                console.log('cloneNode ', elem.cloneNode());
+                console.log('getBoundingClientRect ', elem.getBoundingClientRect());
+                console.log('getClientRects ', elem.getClientRects());
                 console.log('button clicked');
             }, true);
-            console.log('clientWidth ', document.getElementById('btn').clientWidth);
-            console.log('cloneNode ', document.getElementById('btn').cloneNode);
-            console.log('getBoundingClientRect ', document.getElementById('btn').getBoundingClientRect);
-            console.log('getClientRects ', document.getElementById('btn').getClientRects);
+            
         }
     </script>
 </head>
 <body>
-    <h1>Day 1 JavaScript</h1>
+    <h1>JavaScript Event Demo</h1>
+    <p><strong>Param 1</strong></p>
+    <p>Para 2</p>
+    <p>Para 3</p>
+    <p>Para 4</p>
+    <p>Para 5</p>
     <div  onclick="console.log('div clicked')">
         <button id="btn">Click Me</button>
     </div>
